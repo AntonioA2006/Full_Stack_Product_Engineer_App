@@ -1,0 +1,243 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.45;
+  color: #1c2430;
+  background: #eef2f6;
+  --ink: #1c2430;
+  --muted: #5c6b7a;
+  --line: #d5dee8;
+  --card: #ffffff;
+  --accent: #1d4e89;
+  --accent-soft: #e7f0fa;
+  --ok: #0f7b4c;
+  --ok-soft: #e5f6ee;
+  --bad: #a12622;
+  --bad-soft: #fdeceb;
+  --warn: #8a5a00;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+}
+
+button, input { font: inherit; }
+
+button {
+  background: var(--accent);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #f0b429;
+  outline-offset: 2px;
+}
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.25rem; }
+
+.eyebrow {
+  margin: 0 0 0.2rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.progress-count {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.stack { display: grid; gap: 0.75rem; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.path ol {
+  list-style: none;
+  margin: 0.8rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.topic {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.topic strong, .history strong { display: block; }
+
+.topic small, .history small, .muted, .hint {
+  color: var(--muted);
+}
+
+.topic small { display: block; }
+
+.topic-order {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  flex: none;
+}
+
+.topic-completed .topic-order { background: var(--ok-soft); color: var(--ok); }
+.topic-locked { opacity: 0.55; }
+
+.bar {
+  height: 8px;
+  background: #e6edf4;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: var(--ok);
+}
+
+.badge {
+  display: inline-block;
+  margin: 0.7rem 0 0.35rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.hint { margin-top: 0; }
+
+fieldset {
+  border: 0;
+  margin: 0.4rem 0 1rem;
+  padding: 0;
+}
+
+legend {
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.option {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.option.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.option-key {
+  width: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.theory-body {
+  white-space: pre-wrap;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+}
+
+.theory h3 { margin-bottom: 0.6rem; }
+
+.done-copy { margin-bottom: 0; }
+
+.banner {
+  margin: 0;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+}
+
+.banner.ok { background: var(--ok-soft); color: var(--ok); }
+.banner.bad { background: var(--bad-soft); color: var(--bad); }
+
+.history ul {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.history li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+
+.pill {
+  flex: none;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.bad { background: var(--bad-soft); color: var(--bad); }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .topbar { align-items: flex-start; flex-direction: column; }
+}
