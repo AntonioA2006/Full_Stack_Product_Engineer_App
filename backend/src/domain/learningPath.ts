@@ -24,7 +24,7 @@ export interface AnswerCommand {
   optionId: string;
   now: Date;
 }
-
+//una interfaz es un contrato entre dos partes
 export interface AnswerDecision {
   state: JourneyState;
   attempt: NewAttempt;

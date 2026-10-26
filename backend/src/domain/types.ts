@@ -1,5 +1,6 @@
 /** Paso actual del único estudiante. */
 export type Step = 'MAIN' | 'THEORY' | 'REINFORCEMENT' | 'COURSE_DONE';
+//
 
 export type ActivityKind = 'MAIN' | 'REINFORCEMENT';
 
@@ -43,7 +44,7 @@ export interface Topic {
   theory: TheoryContent;
   reinforcement: EvaluableActivity;
 }
-
+//relacionamos cada paso con una actividad
 export interface JourneyState {
   step: Step;
   currentTopicId: string;

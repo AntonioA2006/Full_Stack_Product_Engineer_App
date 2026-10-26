@@ -147,9 +147,7 @@ export function topicIndex(topicId: string): number {
   return index;
 }
 
-export function findActivity(
-  activityId: string,
-): { topic: Topic; activity: EvaluableActivity } | undefined {
+export function findActivity( activityId: string,): { topic: Topic; activity: EvaluableActivity } | undefined {
   for (const topic of TOPICS) {
     if (topic.main.id === activityId) {
       return { topic, activity: topic.main };
